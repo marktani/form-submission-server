@@ -6,7 +6,7 @@ export class Form {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToMany((type) => Field, (field) => field.form)
+  @OneToMany((_type) => Field, (field) => field.form)
   fields: Field[];
 
   @Column()

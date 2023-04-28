@@ -12,7 +12,7 @@ export class Constraint {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne((type) => Field)
+  @ManyToOne((_type) => Field)
   @JoinColumn({ name: "field_id" })
   field: Field;
 

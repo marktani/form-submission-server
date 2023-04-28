@@ -68,7 +68,7 @@ const checkRequiredFieldsArePresent = (
   expectedFields: Field[],
   inputFieldsMap: Map<string, InputField>
 ): boolean | RequiredFieldMissingError => {
-  for (let field of expectedFields) {
+  for (const field of expectedFields) {
     if (field.required) {
       if (!inputFieldsMap.has(`${field.id}`)) {
         return new RequiredFieldMissingError(field.id);
@@ -83,7 +83,7 @@ const validateConstraints = (
   inputFieldsMap: Map<string, InputField>,
   constraints: Constraint[]
 ) => {
-  for (let constraint of constraints) {
+  for (const constraint of constraints) {
     switch (constraint.field.type) {
       case "number": {
         const inputField = inputFieldsMap.get(`${constraint.field.id}`);
@@ -114,6 +114,7 @@ const validateConstraints = (
             throw new Error("not implemented");
           }
         }
+        break;
       }
       case "string": {
         const inputField = inputFieldsMap.get(`${constraint.field.id}`);

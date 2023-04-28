@@ -6,7 +6,7 @@ export class Field {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne((type) => Form, (form) => form.fields)
+  @ManyToOne((_type) => Form, (form) => form.fields)
   form: Form;
 
   @Column()

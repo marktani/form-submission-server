@@ -15,7 +15,7 @@ export class FormSubmission {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne((_) => Form)
+  @ManyToOne((_type) => Form)
   @JoinColumn({ name: "form_id" })
   form: Form;
 
